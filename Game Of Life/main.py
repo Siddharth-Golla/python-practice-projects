@@ -9,6 +9,7 @@ class Game:
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption(TITLE)
         self.clock = pygame.time.Clock()
+        self.grid = Grid()
 
     def run(self):
         self.playing = True
@@ -21,16 +22,10 @@ class Game:
     def update(self):
         pass
 
-    def draw_grid(self):
-        for row in range(0, HEIGHT, TILESIZE):
-            pygame.draw.line(self.screen, LIGHTGREY, (0, row), (WIDTH, row))
-
-        for col in range(0, WIDTH, TILESIZE):
-            pygame.draw.line(self.screen, LIGHTGREY, (col, 0), (col, HEIGHT))
 
     def draw(self):
         self.screen.fill(BGCOLOR)
-        self.draw_grid()
+        self.grid.draw_grid(self.screen)
         pygame.display.flip()
 
 
