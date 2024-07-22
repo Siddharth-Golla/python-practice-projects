@@ -15,3 +15,4 @@ HEIGHT = (COLS * TILESIZE) + 1
 # --- Others -- #
 FPS = 60
 TITLE = "Game Of Life"
+GENERATION_SPEED = 0.1
